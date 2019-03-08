@@ -1028,8 +1028,10 @@ _gitbranch=$2
 [ -z $1 ] && args="online"
 case $args in
 online)
-	#hello world
 	[[ -z $_gitbranch ]] && _gitbranch="master"
+	;;
+dev)
+	_gitbranch="dev"
 	;;
 local)
 	local_install=true
@@ -1043,6 +1045,8 @@ local)
 	echo -e " 输入$yellow local $none即是使用本地安装"
 	echo
 	echo -e " 输入$yellow online $none即是使用在线安装 (默认)"
+	echo
+	echo -e " 输入$yellow dev $none即是安装开发中的版本dev，有新功能和新BUG"
 	echo
 	exit 1
 	;;
